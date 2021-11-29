@@ -3,3 +3,5 @@ update:
 	npm update
 	npm audit fix
 	git push
+build:
+	npm run build
