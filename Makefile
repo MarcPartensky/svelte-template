@@ -18,6 +18,6 @@ logs:
 	DOCKER_HOST=ssh://vps docker-compose logs -f svelte-prod
 down:
 	docker-compose down
-	DOCKER_HOST=ssh://vps docker-compose rm -f svelte-prod
+	DOCKER_HOST=ssh://vps docker-compose rm -sf svelte-prod
 
 
