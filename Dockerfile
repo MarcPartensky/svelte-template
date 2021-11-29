@@ -6,10 +6,12 @@ COPY rollup.config.js ./
 COPY package*.json ./
 
 RUN npm install
+RUN npm install --global vercel
 
 COPY ./public ./public
+WORKDIR /usr/src/app/public
 
 EXPOSE 5000
 ENV HOST=0.0.0.0
 
-ENTRYPOINT [ "sirv", "./public" ]
+ENTRYPOINT [ "vercel", "deploy", "--project", "test" ]
