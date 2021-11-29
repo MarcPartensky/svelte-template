@@ -1,0 +1,8 @@
+version: "3.9"
+services:
+  svelte:
+    image: marcpartensky/svelte-template
+    restart: unless-stopped
+    build: .
+    ports:
+      - "5000:5000"
