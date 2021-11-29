@@ -10,9 +10,14 @@ push:
 	docker push marcpartensky/svelte-template
 dev:
 	docker-compose up -d --build svelte-dev
+	docker-compose logs -f svelte-dev
 prod:
 	DOCKER_HOST=ssh://vps docker-compose up -d svelte-prod --build --force-recreate --remove-orphans
 	DOCKER_HOST=ssh://vps docker-compose logs -f svelte-prod
 logs:
 	DOCKER_HOST=ssh://vps docker-compose logs -f svelte-prod
+down:
+	docker-compose down
+	DOCKER_HOST=ssh://vps docker-compose rm -f svelte-prod
+
 
